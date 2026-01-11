@@ -857,9 +857,6 @@ let userCommands = {
             } else if (target.getIp() == "::ffff:127.0.0.1") {
                 Ban.removeBan(target.getIp());
             } else {
-                if (target.private.runlevel < 3) { // maaaybe like this??
-                    return;
-                }
                 Ban.addBan(target.getIp(), 24 * 3600, "You got banned.");
                 target.socket.emit("ban", {
                    reason: data.reason,
