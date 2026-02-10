@@ -1885,7 +1885,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mike") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=113&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;
@@ -1902,7 +1902,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mary") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=169&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;
@@ -2001,6 +2001,22 @@ class Agent {
                             {
                                 _this.clearDialog();
                             }
+                        } else if (this.userPublic.voice == "joey") {
+                            let url = `./ivona-joey?text=${say}`;
+                            this.audio = new Audio(url);
+                            this.audio.playbackRate = this.playbackRate || 1;
+                            this.audio.preservesPitch = false;
+                            this.audio.play();
+                            this.$dialogCont["html"](`Loading...<br><progress></progress>`)
+                            this.audio.onloadeddata = function()
+                            {
+                                _this.$dialogCont["text"](html)[greentext ? "addClass" : "removeClass"]("bubble_greentext").css("display", "block");
+                                bonzilog(_this.id, _this.userPublic.name, html, _this.color, html, false);
+                            }
+                            this.audio.onended = function()
+                            {
+                                _this.clearDialog();
+                            }
                         } else {
 
                             speak.play(
@@ -2066,7 +2082,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mike") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=113&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;
@@ -2083,7 +2099,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mary") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=169&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;
@@ -2168,7 +2184,23 @@ class Agent {
                             }
                         }
                         else if (this.userPublic.voice == "jennifer") {
-                            let url = `./jennifer?text=${say}`;
+                            let url = `./ivona-jennifer?text=${say}`;
+                            this.audio = new Audio(url);
+                            this.audio.playbackRate = this.playbackRate || 1;
+                            this.audio.preservesPitch = false;
+                            this.audio.play();
+                            this.$dialogCont["html"](`Loading...<br><progress></progress>`)
+                            this.audio.onloadeddata = function()
+                            {
+                                _this.$dialogCont["text"](html)[greentext ? "addClass" : "removeClass"]("bubble_greentext").css("display", "block");
+                                bonzilog(_this.id, _this.userPublic.name, html, _this.color, html, false);
+                            }
+                            this.audio.onended = function()
+                            {
+                                _this.clearDialog();
+                            }
+                        } else if (this.userPublic.voice == "joey") {
+                            let url = `./ivona-joey?text=${say}`;
                             this.audio = new Audio(url);
                             this.audio.playbackRate = this.playbackRate || 1;
                             this.audio.preservesPitch = false;
@@ -2202,7 +2234,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mike") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mike&pitch=113&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;
@@ -2219,7 +2251,7 @@ class Agent {
                             }
                         } else if (this.userPublic.voice == "mary") {
 
-                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=100&speed=150&text=${encodeURIComponent(say.toLowerCase())}`;
+                            let url = `https://www.tetyys.com/SAPI4//SAPI4?voice=Mary&pitch=169&speed=170&text=${encodeURIComponent(say.toLowerCase())}`;
                             var audio = new Audio(url);
                         audio.playbackRate = this.playbackRate || 1;
                         audio.preservesPitch = false;

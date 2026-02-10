@@ -123,6 +123,174 @@ app.get('/ivona-eric', function(req, res) {
 	  res.send("Hello World")
 	}
   })
+app.get('/ivona-jennifer', function(req, res) {
+	if (req.query.text) {
+					const body = new URLSearchParams({
+						but1: req.query.text,
+						butS: "0",
+						butP: "0",
+						butPauses: "0",
+						butt0: "Submit",
+					}).toString();
+					const rq = https.request(
+						{
+							hostname: "readloud.net",
+							path: "/english/american/28-female-voice-jennifer.html",
+							method: "POST",
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						},
+						(r) => {
+							let buffers = [];
+							r.on("error", (e) => console.error(e));
+							r.on("data", (b) => buffers.push(b));
+							r.on("end", () => {
+								const html = Buffer.concat(buffers);
+								const beg = html.indexOf("/tmp/");
+								const end = html.indexOf("mp3", beg) + 3;
+								const sub = html.subarray(beg, end).toString();
+	
+								https.get(`https://readloud.net${sub}`, async (r2) => {
+									r2.pipe(res);
+									return res.writeHead(200, {
+									'Content-Type': 'audio/mp3'
+									});
+								});
+							});
+						}
+					).on("error", (e) => console.error(e));
+					rq.end(body);
+	} else {
+	  res.send("Hello World")
+	}
+  })
+app.get('/ivona-jennifer', function(req, res) {
+	if (req.query.text) {
+					const body = new URLSearchParams({
+						but1: req.query.text,
+						butS: "0",
+						butP: "0",
+						butPauses: "0",
+						butt0: "Submit",
+					}).toString();
+					const rq = https.request(
+						{
+							hostname: "readloud.net",
+							path: "/english/american/28-female-voice-jennifer.html",
+							method: "POST",
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						},
+						(r) => {
+							let buffers = [];
+							r.on("error", (e) => console.error(e));
+							r.on("data", (b) => buffers.push(b));
+							r.on("end", () => {
+								const html = Buffer.concat(buffers);
+								const beg = html.indexOf("/tmp/");
+								const end = html.indexOf("mp3", beg) + 3;
+								const sub = html.subarray(beg, end).toString();
+	
+								https.get(`https://readloud.net${sub}`, async (r2) => {
+									r2.pipe(res);
+									return res.writeHead(200, {
+									'Content-Type': 'audio/mp3'
+									});
+								});
+							});
+						}
+					).on("error", (e) => console.error(e));
+					rq.end(body);
+	} else {
+	  res.send("Hello World")
+	}
+  })
+app.get('/ivona-joey', function(req, res) {
+	if (req.query.text) {
+					const body = new URLSearchParams({
+						but1: req.query.text,
+						butS: "0",
+						butP: "0",
+						butPauses: "0",
+						butt0: "Submit",
+					}).toString();
+					const rq = https.request(
+						{
+							hostname: "readloud.net",
+							path: "/english/american/29-male-voice-joey.html",
+							method: "POST",
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						},
+						(r) => {
+							let buffers = [];
+							r.on("error", (e) => console.error(e));
+							r.on("data", (b) => buffers.push(b));
+							r.on("end", () => {
+								const html = Buffer.concat(buffers);
+								const beg = html.indexOf("/tmp/");
+								const end = html.indexOf("mp3", beg) + 3;
+								const sub = html.subarray(beg, end).toString();
+	
+								https.get(`https://readloud.net${sub}`, async (r2) => {
+									r2.pipe(res);
+									return res.writeHead(200, {
+									'Content-Type': 'audio/mp3'
+									});
+								});
+							});
+						}
+					).on("error", (e) => console.error(e));
+					rq.end(body);
+	} else {
+	  res.send("Hello World")
+	}
+  })
+app.get('/ivona-joey', function(req, res) {
+	if (req.query.text) {
+					const body = new URLSearchParams({
+						but1: req.query.text,
+						butS: "0",
+						butP: "0",
+						butPauses: "0",
+						butt0: "Submit",
+					}).toString();
+					const rq = https.request(
+						{
+							hostname: "readloud.net",
+							path: "/english/american/29-male-voice-joey.html",
+							method: "POST",
+							headers: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							}
+						},
+						(r) => {
+							let buffers = [];
+							r.on("error", (e) => console.error(e));
+							r.on("data", (b) => buffers.push(b));
+							r.on("end", () => {
+								const html = Buffer.concat(buffers);
+								const beg = html.indexOf("/tmp/");
+								const end = html.indexOf("mp3", beg) + 3;
+								const sub = html.subarray(beg, end).toString();
+	
+								https.get(`https://readloud.net${sub}`, async (r2) => {
+									r2.pipe(res);
+									return res.writeHead(200, {
+									'Content-Type': 'audio/mp3'
+									});
+								});
+							});
+						}
+					).on("error", (e) => console.error(e));
+					rq.end(body);
+	} else {
+	  res.send("Hello World")
+	}
+  })
 app.get('/oddcast-paul', function(req, res) {
 	if (req.query.text) {
 					const q = new URLSearchParams({
@@ -273,7 +441,7 @@ Ban.init();
 // Start actually listening
 server.listen(port, function () {
 	console.log(
-		"Welcome to Windows XP Chat Edition! Time to meme!\nServer listening at port " + port
+		"Welcome to WinChat XP! Time to meme!\nServer listening at port " + port
 	);
 });
 app.use(express.static(__dirname + '/public'));
