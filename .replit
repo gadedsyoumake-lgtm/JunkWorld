@@ -1,0 +1,17 @@
+modules = ["nodejs-20", "web", "bash"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+
+[[workflows.workflow]]
+name = "BW"
+mode = "sequential"
+author = 52269125
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"
