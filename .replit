@@ -15,3 +15,7 @@ author = 52269125
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "node index.js"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
